@@ -1,0 +1,15 @@
+{%extends "base.html"%}
+{%block title%}welcome{%endblock%}
+{% block content %}
+    <h2>Meetings</h2>
+    <ul>
+        {%for meeting in meetings%}
+
+        <li><a href="{%url 'meeting_detail' meeting.id%}">{{meeting.title}}</a></li>
+
+        {%endfor%}
+    </ul>
+    <a href="{%url 'room_list'%}">All rooms</a>
+    <br>
+    <a href="{%url 'new'%}">Add new Meeting</a>
+{%endblock%}
